@@ -13,8 +13,9 @@ export const CONTACT = {
   addressLine: "2 Mari Brosse Street, Kutaisi, Georgia",
   addressKa: "მარი ბროსეს ქუჩა 2, ქუთაისი, საქართველო",
   mapEmbed:
-    "https://www.google.com/maps?q=2+Mari+Brosse+Street,+Kutaisi,+Georgia&z=17&output=embed",
-  mapLink: "https://www.google.com/maps?q=2+Mari+Brosse+Street,+Kutaisi,+Georgia",
+    "https://www.google.com/maps?q=Solo+Barber,+Kutaisi,+Georgia&ll=42.2729758,42.7055683&z=17&output=embed",
+  mapLink:
+    "https://www.google.com/maps/place/Solo+Barber/@42.2729758,42.7055683,17z/data=!4m6!3m5!1s0x405c8d007da20213:0x4dfbc98a36c36d0a!8m2!3d42.2729758!4d42.7055683!16s%2Fg%2F11z7rvw7wt",
 };
 
 export const HOURS: L = {
