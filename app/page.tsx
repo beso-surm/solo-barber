@@ -89,7 +89,7 @@ export default function HomePage() {
             <h1 className="mt-5 max-w-[820px] font-heading text-[clamp(34px,6.4vw,72px)] font-bold leading-[1.1] text-cream">
               {HOME.heroTitle[lang]}
             </h1>
-            <p className="mt-[22px] max-w-[480px] font-body text-[clamp(15px,2vw,19px)] leading-[1.7] text-[#D6D2CB]">
+            <p className="mt-[22px] max-w-[480px] font-body text-[clamp(16px,2vw,19px)] leading-[1.7] text-[#D6D2CB]">
               {HOME.heroSubhead[lang]}
             </p>
             <div className="mt-9 flex flex-wrap gap-3.5">
@@ -235,7 +235,7 @@ export default function HomePage() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 hover:scale-105"
                 />
-                <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-transparent to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-transparent to-transparent p-4 opacity-100 transition-opacity duration-300 min-[901px]:opacity-0 min-[901px]:group-hover:opacity-100">
                   <span className="font-body text-xs uppercase tracking-[0.18em] text-cream">{g.tag[lang]}</span>
                 </div>
               </SpotlightCard>
@@ -304,7 +304,7 @@ export default function HomePage() {
                     <IconStar key={s} className="h-3.5 w-3.5" />
                   ))}
                 </div>
-                <p className="mt-[18px] mb-5 font-body text-[15px] leading-[1.7] text-cream">{rev.quote[lang]}</p>
+                <p className="mt-[18px] mb-5 font-body text-[16px] leading-[1.7] text-cream">{rev.quote[lang]}</p>
                 <span className="font-body text-[13px] text-muted">{rev.name}</span>
               </SpotlightCard>
             </Reveal>
@@ -325,13 +325,13 @@ export default function HomePage() {
             </h2>
             <div className="mb-2 flex items-start gap-2.5">
               <IconMapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-              <p className="font-body text-[15px] leading-[1.8] text-cream">
+              <p className="font-body text-[16px] leading-[1.8] text-cream">
                 {lang === "ka" ? CONTACT.addressKa : CONTACT.addressLine}
               </p>
             </div>
             <div className="mb-8 flex items-start gap-2.5">
               <IconClock className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-              <p className="font-body text-[15px] leading-[1.8] text-muted">{HOURS[lang]}</p>
+              <p className="font-body text-[16px] leading-[1.8] text-muted">{HOURS[lang]}</p>
             </div>
             <div className="flex flex-wrap gap-3.5">
               <MagneticLink>

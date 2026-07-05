@@ -76,7 +76,7 @@ export default function BookingPage() {
   };
 
   const inputClass =
-    "w-full box-border rounded bg-surface-green border border-[rgba(163,156,146,0.3)] p-3.5 text-cream font-body text-[15px] placeholder:text-[#6a6a6e] focus:outline-none focus:border-gold";
+    "w-full box-border rounded bg-surface-green border border-[rgba(163,156,146,0.3)] p-3.5 text-cream font-body text-[16px] placeholder:text-[#6a6a6e] focus:outline-none focus:border-gold";
 
   return (
     <div className="min-h-screen bg-ink font-body" data-screen-label="Booking">
@@ -89,7 +89,7 @@ export default function BookingPage() {
         <h1 className="mt-3 mb-[18px] font-heading text-[clamp(32px,5vw,52px)] font-semibold text-cream">
           {BOOKING_PAGE.title[lang]}
         </h1>
-        <p className="font-body text-[15px] leading-[1.7] text-muted">{BOOKING_PAGE.intro[lang]}</p>
+        <p className="font-body text-[16px] leading-[1.7] text-muted">{BOOKING_PAGE.intro[lang]}</p>
       </Reveal>
 
       <section className="mx-auto max-w-[640px] px-6 pt-10 pb-[60px]">

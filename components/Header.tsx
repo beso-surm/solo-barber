@@ -78,7 +78,7 @@ export default function Header({ hasHero = false }: { hasHero?: boolean }) {
         }}
       >
         <div className="mx-auto flex h-20 max-w-[1320px] items-center justify-between gap-5 px-8">
-          <Link href="/" className="flex flex-shrink-0 items-center gap-[11px] leading-none no-underline">
+          <Link href="/" className="flex flex-shrink-0 items-center gap-[11px] py-1.5 leading-none no-underline">
             <Image
               src="/images/logo.jpg"
               alt="Solo Barber"
@@ -187,7 +187,7 @@ export default function Header({ hasHero = false }: { hasHero?: boolean }) {
               key={item.key}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className="font-heading text-[27px] font-semibold no-underline"
+              className="block py-2 font-heading text-[27px] font-semibold no-underline"
               style={{ color: item.isActive ? "#C9A86A" : "#F5F5F5" }}
             >
               {item.label}
@@ -196,10 +196,10 @@ export default function Header({ hasHero = false }: { hasHero?: boolean }) {
         </div>
         <div className="mt-auto flex flex-col gap-4 pb-6">
           <div className="flex items-center justify-between border-t border-[rgba(163,156,146,0.18)] py-3.5 px-0.5">
-            <a href={CONTACT.phoneHref} className="font-body text-sm text-muted no-underline">
+            <a href={CONTACT.phoneHref} className="py-3 font-body text-sm text-muted no-underline">
               {CONTACT.phone}
             </a>
-            <button onClick={toggleLang} className="border-none bg-transparent p-1.5 font-body text-[13px] text-gold">
+            <button onClick={toggleLang} className="border-none bg-transparent px-3 py-3 font-body text-[13px] text-gold">
               {langToggleLabel}
             </button>
           </div>

@@ -78,7 +78,7 @@ export default function GalleryPage() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/65 via-transparent to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/65 via-transparent to-transparent p-4 opacity-100 transition-opacity duration-300 min-[901px]:opacity-0 min-[901px]:group-hover:opacity-100">
                   <span className="font-body text-xs uppercase tracking-[0.16em] text-cream">{p.tag[lang]}</span>
                 </div>
               </button>

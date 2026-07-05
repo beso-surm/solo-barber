@@ -34,7 +34,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener"
               aria-label="Instagram"
-              className="flex h-[38px] w-[38px] items-center justify-center rounded-full border border-[rgba(201,168,106,0.4)] text-gold no-underline transition-colors duration-200 hover:bg-gold hover:text-[#0b0b0b]"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(201,168,106,0.4)] text-gold no-underline transition-colors duration-200 hover:bg-gold hover:text-[#0b0b0b]"
             >
               <IconInstagram className="h-4 w-4" />
             </a>
@@ -43,7 +43,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener"
               aria-label="WhatsApp"
-              className="flex h-[38px] w-[38px] items-center justify-center rounded-full border border-[rgba(201,168,106,0.4)] text-gold no-underline transition-colors duration-200 hover:bg-gold hover:text-[#0b0b0b]"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(201,168,106,0.4)] text-gold no-underline transition-colors duration-200 hover:bg-gold hover:text-[#0b0b0b]"
             >
               <IconWhatsApp className="h-4 w-4" />
             </a>
@@ -54,23 +54,23 @@ export default function Footer() {
           <span className="font-body text-xs uppercase tracking-[0.14em] text-gold">
             {t("Explore", "ნავიგაცია")}
           </span>
-          <div className="mt-[18px] flex flex-col gap-3">
-            <Link href="/" className="font-body text-sm text-cream no-underline">
+          <div className="mt-1 flex flex-col gap-1">
+            <Link href="/" className="py-1.5 font-body text-sm text-cream no-underline">
               {NAV_LABEL.home[lang]}
             </Link>
-            <Link href="/services" className="font-body text-sm text-cream no-underline">
+            <Link href="/services" className="py-1.5 font-body text-sm text-cream no-underline">
               {NAV_LABEL.services[lang]}
             </Link>
-            <Link href="/gallery" className="font-body text-sm text-cream no-underline">
+            <Link href="/gallery" className="py-1.5 font-body text-sm text-cream no-underline">
               {NAV_LABEL.gallery[lang]}
             </Link>
-            <Link href="/team" className="font-body text-sm text-cream no-underline">
+            <Link href="/team" className="py-1.5 font-body text-sm text-cream no-underline">
               {NAV_LABEL.team[lang]}
             </Link>
-            <Link href="/#reviews" className="font-body text-sm text-cream no-underline">
+            <Link href="/#reviews" className="py-1.5 font-body text-sm text-cream no-underline">
               {NAV_LABEL.reviews[lang]}
             </Link>
-            <Link href="/booking" className="font-body text-sm text-cream no-underline">
+            <Link href="/booking" className="py-1.5 font-body text-sm text-cream no-underline">
               {t("Book Appointment", "დაჯავშნა")}
             </Link>
           </div>
@@ -80,19 +80,19 @@ export default function Footer() {
           <span className="font-body text-xs uppercase tracking-[0.14em] text-gold">
             {t("Contact", "კონტაქტი")}
           </span>
-          <div className="mt-[18px] flex flex-col gap-3">
+          <div className="mt-1 flex flex-col gap-1">
             <a
               href={CONTACT.mapLink}
               target="_blank"
               rel="noopener"
-              className="font-body text-sm leading-[1.5] text-cream no-underline"
+              className="py-1.5 font-body text-sm leading-[1.5] text-cream no-underline"
             >
               {lang === "ka" ? CONTACT.addressKa : CONTACT.addressLine}
             </a>
-            <a href={CONTACT.phoneHref} className="font-body text-sm text-cream no-underline">
+            <a href={CONTACT.phoneHref} className="py-1.5 font-body text-sm text-cream no-underline">
               {CONTACT.phone}
             </a>
-            <span className="font-body text-sm text-muted">{HOURS[lang]}</span>
+            <span className="py-1.5 font-body text-sm text-muted">{HOURS[lang]}</span>
           </div>
         </div>
       </div>
