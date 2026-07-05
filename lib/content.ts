@@ -13,7 +13,7 @@ export const CONTACT = {
   addressLine: "2 Mari Brosse Street, Kutaisi, Georgia",
   addressKa: "მარი ბროსეს ქუჩა 2, ქუთაისი, საქართველო",
   mapEmbed:
-    "https://www.google.com/maps?q=2+Mari+Brosse+Street,+Kutaisi,+Georgia&output=embed",
+    "https://www.google.com/maps?q=2+Mari+Brosse+Street,+Kutaisi,+Georgia&z=17&output=embed",
   mapLink: "https://www.google.com/maps?q=2+Mari+Brosse+Street,+Kutaisi,+Georgia",
 };
 

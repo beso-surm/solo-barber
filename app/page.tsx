@@ -8,6 +8,7 @@ import Reveal from "@/components/motion/Reveal";
 import MagneticLink from "@/components/motion/MagneticLink";
 import TiltCard from "@/components/motion/TiltCard";
 import SpotlightCard from "@/components/motion/SpotlightCard";
+import MapEmbed from "@/components/MapEmbed";
 import { useLanguage } from "@/components/LanguageProvider";
 import {
   CONTACT,
@@ -352,13 +353,8 @@ export default function HomePage() {
               </a>
             </div>
           </Reveal>
-          <Reveal delay={150} className="overflow-hidden rounded-lg border border-[rgba(201,168,106,0.2)]">
-            <iframe
-              title="Solo Barber location"
-              src={CONTACT.mapEmbed}
-              className="h-[300px] w-full border-0"
-              style={{ filter: "grayscale(0.4) invert(0.9) contrast(0.9)" }}
-            />
+          <Reveal delay={150}>
+            <MapEmbed className="h-[300px] w-full rounded-lg" />
           </Reveal>
         </div>
       </section>

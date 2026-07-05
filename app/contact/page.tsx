@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/motion/Reveal";
 import MagneticLink from "@/components/motion/MagneticLink";
+import MapEmbed from "@/components/MapEmbed";
 import { useLanguage } from "@/components/LanguageProvider";
 import { CONTACT, HOURS, CONTACT_PAGE } from "@/lib/content";
 import { IconMapPin, IconPhone, IconClock, IconWhatsApp, IconInstagram } from "@/components/icons";
@@ -84,13 +85,8 @@ export default function ContactPage() {
           </div>
         </Reveal>
 
-        <Reveal delay={150} className="overflow-hidden rounded-md border border-[rgba(201,168,106,0.2)]">
-          <iframe
-            title="Solo Barber location"
-            src={CONTACT.mapEmbed}
-            className="h-[420px] w-full border-0"
-            style={{ filter: "grayscale(0.3) invert(0.92) contrast(0.9)" }}
-          />
+        <Reveal delay={150}>
+          <MapEmbed className="h-[420px] w-full rounded-md" />
         </Reveal>
       </section>
 
