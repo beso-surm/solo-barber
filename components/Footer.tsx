@@ -67,8 +67,8 @@ export default function Footer() {
             <Link href="/team" className="py-1.5 font-body text-sm text-cream no-underline">
               {NAV_LABEL.team[lang]}
             </Link>
-            <Link href="/#reviews" className="py-1.5 font-body text-sm text-cream no-underline">
-              {NAV_LABEL.reviews[lang]}
+            <Link href="/#trust" className="py-1.5 font-body text-sm text-cream no-underline">
+              {NAV_LABEL.trust[lang]}
             </Link>
             <Link href="/booking" className="py-1.5 font-body text-sm text-cream no-underline">
               {t("Book Appointment", "დაჯავშნა")}

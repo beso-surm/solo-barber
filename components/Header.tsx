@@ -9,7 +9,7 @@ import { CONTACT, NAV_LABEL } from "@/lib/content";
 import MagneticLink from "@/components/motion/MagneticLink";
 import { IconClose, IconWhatsApp } from "@/components/icons";
 
-const NAV_ORDER = ["home", "services", "gallery", "team", "reviews", "contact"] as const;
+const NAV_ORDER = ["home", "services", "gallery", "team", "trust", "contact"] as const;
 
 const NAV_HREF_STATIC: Record<string, string> = {
   home: "/",
@@ -58,7 +58,7 @@ export default function Header({ hasHero = false }: { hasHero?: boolean }) {
   }, [isMenuOpen]);
 
   const navItems = NAV_ORDER.map((key) => {
-    const href = key === "reviews" ? (current === "home" ? "#reviews" : "/#reviews") : NAV_HREF_STATIC[key];
+    const href = key === "trust" ? (current === "home" ? "#trust" : "/#trust") : NAV_HREF_STATIC[key];
     const isActive = key === current;
     return { key, href, label: NAV_LABEL[key][lang], isActive };
   });

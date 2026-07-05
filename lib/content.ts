@@ -28,13 +28,15 @@ export const NAV_LABEL: Record<string, L> = {
   services: { en: "Services", ka: "სერვისები" },
   gallery: { en: "Gallery", ka: "გალერეა" },
   team: { en: "Team", ka: "გუნდი" },
-  reviews: { en: "Reviews", ka: "შეფასებები" },
+  trust: { en: "Why Us", ka: "რატომ ჩვენ" },
   contact: { en: "Contact", ka: "კონტაქტი" },
 };
 
 export const COMMON = {
   bookNow: { en: "Book Now", ka: "დაჯავშნა" } as L,
   bookAppointment: { en: "Book Appointment", ka: "ჯავშნის გაფორმება" } as L,
+  callNow: { en: "Call Now", ka: "დარეკვა" } as L,
+  whatsappMessage: { en: "WhatsApp", ka: "WhatsApp" } as L,
   viewAllServices: { en: "View All Services", ka: "ყველა სერვისი" } as L,
   viewGallery: { en: "View Gallery", ka: "სრული გალერეა" } as L,
   getDirections: { en: "Get Directions", ka: "მიმართულებები" } as L,
@@ -123,45 +125,21 @@ export const SERVICE_GROUPS: ServiceGroup[] = [
 
 export const HOME = {
   heroKicker: { en: "SOLO", ka: "SOLO" } as L,
-  heroTitle: { en: "Premium Barber Experience in Kutaisi", ka: "პრემიუმ ბარბერის გამოცდილება ქუთაისში" } as L,
-  heroSubhead: {
-    en: "Clean cuts. Professional service. Modern atmosphere.",
-    ka: "სუფთა შეჭრა. პროფესიონალური სერვისი. თანამედროვე ატმოსფერო.",
+  heroTitle: {
+    en: "Premium Men's Barbershop in Kutaisi",
+    ka: "პრემიუმ მამაკაცის ბარბერშოპი ქუთაისში",
   } as L,
-  ratingLabel: { en: "Rating", ka: "რეიტინგი" } as L,
+  heroSubhead: {
+    en: "Precision fades, classic haircuts, and beard grooming — book your chair at Kutaisi's newest men's barbershop.",
+    ka: "ზუსტი ფეიდები, კლასიკური შეჭრა და წვერის მოვლა — დაჯავშენით სავარძელი ქუთაისის უახლეს მამაკაცის ბარბერშოპში.",
+  } as L,
+  ratingBadge: { en: "New in Kutaisi", ka: "ახალია ქუთაისში" } as L,
   locationBadge: { en: "Kutaisi", ka: "ქუთაისი" } as L,
   openBadge: { en: "Open Daily", ka: "ღიაა ყოველდღე" } as L,
   servicesTeaserTitle: { en: "Services", ka: "სერვისები" } as L,
   galleryTeaserTitle: { en: "Gallery", ka: "გალერეა" } as L,
   locationTitle: { en: "Visit Us", ka: "გვეწვიეთ" } as L,
-  whySoloTitle: { en: "Why Solo Barber", ka: "რატომ Solo Barber" } as L,
 };
-
-export type Value = { title: L; desc: L };
-
-export const VALUES: Value[] = [
-  {
-    title: { en: "Personalized Attention", ka: "პერსონალური მიდგომა" },
-    desc: {
-      en: "Every visit is one-on-one — your barber's full focus, start to finish.",
-      ka: "ყოველი ვიზიტი — ერთზე ერთი. თქვენი ბარბერის სრული ყურადღება დასაწყისიდან დასასრულამდე.",
-    },
-  },
-  {
-    title: { en: "Premium Products", ka: "პრემიუმ პროდუქცია" },
-    desc: {
-      en: "Quality tools and products, chosen for lasting results.",
-      ka: "ხარისხიანი ინსტრუმენტები და პროდუქცია გამძლე შედეგისთვის.",
-    },
-  },
-  {
-    title: { en: "By Appointment Only", ka: "მხოლოდ წინასწარი ჩაწერით" },
-    desc: {
-      en: "No walk-in crowds — just you and your reserved time.",
-      ka: "არანაირი რიგი — მხოლოდ თქვენი დაჯავშნილი დრო.",
-    },
-  },
-];
 
 export const SERVICES_PAGE = {
   title: { en: "Services & Pricing", ka: "სერვისები და ფასები" } as L,
@@ -218,37 +196,91 @@ export const CONTACT_PAGE = {
   hoursLabel: { en: "Hours", ka: "სამუშაო საათები" } as L,
 };
 
-export type Review = { name: string; quote: L };
-
-export const REVIEWS_PAGE = {
-  title: { en: "What Clients Say", ka: "რას ამბობენ კლიენტები" } as L,
-  disclaimer: {
-    en: "Sample reviews — live ratings coming soon.",
-    ka: "სანიმუშო შეფასებები — რეალური რეიტინგები მალე დაემატება.",
+// Honest trust section — replaces fabricated reviews. Solo Barber is a new
+// business with no verifiable review history yet, so this leads with the
+// "first clients" framing plus concrete, true claims (team size, appointment
+// model, products) instead of invented testimonials.
+export const TRUST_SECTION = {
+  kicker: { en: "New to Kutaisi", ka: "ახალია ქუთაისში" } as L,
+  title: { en: "Be One of Our First Clients", ka: "გახდით ჩვენი პირველი კლიენტი" } as L,
+  body: {
+    en: "Solo Barber just opened its doors in Kutaisi, so instead of a long list of reviews, we'd rather earn yours. Our team of seven barbers and stylists works one appointment at a time — no waiting room, no rushed cuts — with premium tools and products chosen for a clean, lasting result.",
+    ka: "Solo Barber ახლახან გაიხსნა ქუთაისში, ამიტომ დიდი შეფასებების სიის ნაცვლად გვინდა, რომ თქვენი ნდობა დავიმსახუროთ საქმით. ჩვენი შვიდი ბარბერისა და სტილისტისგან შემდგარი გუნდი მუშაობს ერთდროულად ერთ კლიენტთან — ლოდინის გარეშე, აჩქარების გარეშე — პრემიუმ ინსტრუმენტებითა და პროდუქტებით, რომლებიც სუფთა და გამძლე შედეგს იძლევა.",
   } as L,
+  points: [
+    {
+      title: { en: "Trained, Attentive Barbers", ka: "გაწვრთნილი და ყურადღებიანი ბარბერები" },
+      desc: {
+        en: "Every barber on our team works modern fades, classic cuts, and beard grooming.",
+        ka: "გუნდის ყოველი ბარბერი ფლობს თანამედროვე ფეიდის, კლასიკური შეჭრისა და წვერის მოვლის ტექნიკებს.",
+      },
+    },
+    {
+      title: { en: "Premium Products Only", ka: "მხოლოდ პრემიუმ პროდუქცია" },
+      desc: {
+        en: "Quality tools and grooming products, chosen for lasting results — not the cheapest option.",
+        ka: "ხარისხიანი ინსტრუმენტები და მოვლის საშუალებები, შერჩეული გამძლე შედეგისთვის — არა ყველაზე იაფი ვარიანტისთვის.",
+      },
+    },
+    {
+      title: { en: "Your Time, Respected", ka: "თქვენი დროის პატივისცემა" },
+      desc: {
+        en: "By appointment only, so every visit starts on time and gets our full attention.",
+        ka: "მხოლოდ წინასწარი ჩაწერით — ყოველი ვიზიტი იწყება დროულად და იღებს ჩვენს სრულ ყურადღებას.",
+      },
+    },
+  ],
+};
+
+export type FaqItem = { q: L; a: L };
+
+export const FAQ_SECTION = {
+  kicker: { en: "Good to Know", ka: "სასარგებლო ინფორმაცია" } as L,
+  title: { en: "Frequently Asked Questions", ka: "ხშირად დასმული კითხვები" } as L,
   items: [
     {
-      name: "Giorgi T.",
-      quote: {
-        en: "Best haircut I've had in Kutaisi — clean, professional, exactly what I asked for.",
-        ka: "საუკეთესო შეჭრა ქუთაისში — სუფთა, პროფესიონალური, ზუსტად ისე, როგორც მინდოდა.",
+      q: { en: "How much does a haircut cost?", ka: "რა ღირს თმის შეჭრა?" },
+      a: {
+        en: "Prices start from 15 GEL for styling and go up to 40 GEL for a skin fade. See the full price list on our Services page.",
+        ka: "ფასები იწყება 15 ₾-დან სტაილინგზე და აღწევს 40 ₾-მდე სქინ ფეიდზე. სრული ფასების სია იხილეთ სერვისების გვერდზე.",
       },
     },
     {
-      name: "Levan K.",
-      quote: {
-        en: "Great atmosphere and attention to detail. Highly recommend.",
-        ka: "შესანიშნავი ატმოსფერო და დეტალებზე ყურადღება. მაქსიმალურად გირჩევთ.",
+      q: { en: "How do I book an appointment?", ka: "როგორ დავჯავშნო ვიზიტი?" },
+      a: {
+        en: "Book directly on our website, message us on WhatsApp, or call us — we'll confirm your time by phone or WhatsApp shortly after.",
+        ka: "დაჯავშენით პირდაპირ ჩვენს საიტზე, მოგვწერეთ WhatsApp-ზე ან დაგვირეკეთ — მალე დაგიდასტურებთ დროს ტელეფონით ან WhatsApp-ით.",
       },
     },
     {
-      name: "Nika M.",
-      quote: {
-        en: "Personal, relaxed, premium — everything a barber visit should be.",
-        ka: "პერსონალური, მშვიდი, პრემიუმ — ზუსტად ისეთი, როგორიც უნდა იყოს ვიზიტი.",
+      q: { en: "Do you accept walk-ins?", ka: "შესაძლებელია უჯავშნოდ მოსვლა?" },
+      a: {
+        en: "Solo Barber operates by appointment only, so every client gets our full attention with no waiting. We recommend booking ahead, but message us on WhatsApp to check for same-day availability.",
+        ka: "Solo Barber მუშაობს მხოლოდ წინასწარი ჩაწერით, რათა ყველა კლიენტმა მიიღოს სრული ყურადღება ლოდინის გარეშე. გირჩევთ წინასწარ დაჯავშნას, თუმცა მოგვწერეთ WhatsApp-ზე იმავე დღის ვიზიტის შესამოწმებლად.",
       },
     },
-  ] as Review[],
+    {
+      q: { en: "How long does a haircut take?", ka: "რამდენ ხანს გრძელდება შეჭრა?" },
+      a: {
+        en: "Most services run about 30–45 minutes depending on what you book — a beard trim is quicker, a full cut with a hot towel shave takes a little longer.",
+        ka: "უმეტესი სერვისი გრძელდება დაახლოებით 30–45 წუთი, სერვისის მიხედვით — წვერის შეკვეცა უფრო სწრაფია, ხოლო სრული შეჭრა ცხელი პირსახოცით საპარსით ცოტა მეტ დროს საჭიროებს.",
+      },
+    },
+    {
+      q: { en: "Where is Solo Barber located?", ka: "სად მდებარეობს Solo Barber?" },
+      a: {
+        en: "We're at 2 Mari Brosse Street in Kutaisi, Georgia — see the map below for directions.",
+        ka: "ვმდებარეობთ მარი ბროსეს ქუჩა 2-ში, ქუთაისი, საქართველო — მისამართისთვის იხილეთ რუკა ქვემოთ.",
+      },
+    },
+    {
+      q: { en: "What are your opening hours?", ka: "რომელ საათებში ხართ ღია?" },
+      a: {
+        en: "We're open every day from 9:00 AM to 8:00 PM.",
+        ka: "ღიები ვართ ყოველდღე, 9:00-დან 20:00 საათამდე.",
+      },
+    },
+  ] as FaqItem[],
 };
 
 export const FOOTER = {

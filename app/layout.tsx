@@ -4,6 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import CustomCursor from "@/components/motion/CustomCursor";
 import GrainOverlay from "@/components/GrainOverlay";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -32,21 +33,26 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://solo-barber-gamma.vercel.app"),
-  title: "Solo Barber — Premium Barber Experience in Kutaisi",
+  title: "Solo Barber | Men's Barbershop in Kutaisi — Fades, Haircuts & Beard Trims",
   description:
-    "Clean cuts. Professional service. Modern atmosphere. By-appointment barbershop in Kutaisi, Georgia.",
+    "Book a men's haircut, skin fade, or beard trim at Solo Barber — a premium, appointment-only barbershop in Kutaisi, Georgia. Personalized grooming, every visit.",
   keywords: [
     "Solo Barber",
     "barber Kutaisi",
     "barbershop Kutaisi",
-    "ბარბერი ქუთაისი",
-    "თმის შეჭრა ქუთაისი",
-    "haircut Kutaisi",
+    "men's haircut Kutaisi",
+    "fade haircut Kutaisi",
     "beard trim Kutaisi",
+    "men's grooming Kutaisi",
+    "ბარბერი ქუთაისი",
+    "ბარბერშოპი ქუთაისში",
+    "თმის შეჭრა ქუთაისი",
+    "წვერის მოვლა ქუთაისი",
   ],
   openGraph: {
-    title: "Solo Barber — Premium Barber Experience in Kutaisi",
-    description: "Clean cuts. Professional service. Modern atmosphere.",
+    title: "Solo Barber | Men's Barbershop in Kutaisi",
+    description:
+      "Precision fades, classic haircuts, and beard grooming — book your chair at Kutaisi's newest men's barbershop.",
     url: "https://solo-barber-gamma.vercel.app",
     siteName: "Solo Barber",
     locale: "ka_GE",
@@ -68,7 +74,10 @@ export default function RootLayout({
       <body className="min-h-screen bg-ink font-body text-cream antialiased">
         <GrainOverlay />
         <CustomCursor />
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          {children}
+          <FloatingWhatsApp />
+        </LanguageProvider>
       </body>
     </html>
   );
