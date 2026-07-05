@@ -22,6 +22,7 @@ const notoGeorgian = Noto_Sans_Georgian({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://solo-barber-gamma.vercel.app"),
   title: "Solo Barber — Premium Barber Experience in Kutaisi",
   description:
     "Clean cuts. Professional service. Modern atmosphere. By-appointment barbershop in Kutaisi, Georgia.",
@@ -37,6 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Solo Barber — Premium Barber Experience in Kutaisi",
     description: "Clean cuts. Professional service. Modern atmosphere.",
+    url: "https://solo-barber-gamma.vercel.app",
     siteName: "Solo Barber",
     locale: "ka_GE",
     alternateLocale: ["en_US"],
