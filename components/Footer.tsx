@@ -4,22 +4,27 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/components/LanguageProvider";
 import { CONTACT, HOURS, NAV_LABEL, FOOTER } from "@/lib/content";
+import { IconInstagram, IconWhatsApp } from "@/components/icons";
 
 export default function Footer() {
   const { lang } = useLanguage();
   const t = (en: string, ka: string) => (lang === "ka" ? ka : en);
 
   return (
-    <footer className="border-t border-[rgba(201,168,106,0.18)] bg-surface px-8 pt-[72px] pb-[110px]">
+    <footer className="relative border-t border-[rgba(201,168,106,0.18)] bg-surface px-8 pt-[72px] pb-[110px]">
+      <div className="hairline absolute top-0 left-0 right-0" />
       <div className="mx-auto grid max-w-[1320px] grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-11">
         <div>
-          <Image
-            src="/images/logo.jpg"
-            alt="Solo Barber"
-            width={56}
-            height={56}
-            className="h-14 w-14 rounded-full object-contain"
-          />
+          <div className="flex items-center gap-3">
+            <Image
+              src="/images/logo.jpg"
+              alt="Solo Barber"
+              width={56}
+              height={56}
+              className="h-14 w-14 rounded-full object-contain"
+            />
+            <span className="font-accent text-2xl italic tracking-wide text-cream">Solo</span>
+          </div>
           <p className="mt-4 max-w-[260px] font-body text-sm leading-[1.7] text-muted">
             {lang === "ka" ? FOOTER.tagline.ka : FOOTER.tagline.en}
           </p>
@@ -28,17 +33,19 @@ export default function Footer() {
               href={CONTACT.instagramHref}
               target="_blank"
               rel="noopener"
-              className="flex h-[38px] w-[38px] items-center justify-center rounded-full border border-[rgba(201,168,106,0.4)] font-body text-xs text-gold no-underline"
+              aria-label="Instagram"
+              className="flex h-[38px] w-[38px] items-center justify-center rounded-full border border-[rgba(201,168,106,0.4)] text-gold no-underline transition-colors duration-200 hover:bg-gold hover:text-[#0b0b0b]"
             >
-              IG
+              <IconInstagram className="h-4 w-4" />
             </a>
             <a
               href={CONTACT.whatsappHref}
               target="_blank"
               rel="noopener"
-              className="flex h-[38px] w-[38px] items-center justify-center rounded-full border border-[rgba(201,168,106,0.4)] font-body text-[11px] text-gold no-underline"
+              aria-label="WhatsApp"
+              className="flex h-[38px] w-[38px] items-center justify-center rounded-full border border-[rgba(201,168,106,0.4)] text-gold no-underline transition-colors duration-200 hover:bg-gold hover:text-[#0b0b0b]"
             >
-              WA
+              <IconWhatsApp className="h-4 w-4" />
             </a>
           </div>
         </div>

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Manrope, Inter, Noto_Sans_Georgian } from "next/font/google";
+import { Manrope, Inter, Noto_Sans_Georgian, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
+import CustomCursor from "@/components/motion/CustomCursor";
+import GrainOverlay from "@/components/GrainOverlay";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -19,6 +21,13 @@ const notoGeorgian = Noto_Sans_Georgian({
   variable: "--font-noto-georgian",
   subsets: ["georgian"],
   weight: ["400", "500", "600", "700", "800"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -54,9 +63,11 @@ export default function RootLayout({
   return (
     <html
       lang="ka"
-      className={`${manrope.variable} ${inter.variable} ${notoGeorgian.variable}`}
+      className={`${manrope.variable} ${inter.variable} ${notoGeorgian.variable} ${playfair.variable}`}
     >
       <body className="min-h-screen bg-base font-body text-cream antialiased">
+        <GrainOverlay />
+        <CustomCursor />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

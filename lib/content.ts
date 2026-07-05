@@ -133,7 +133,34 @@ export const HOME = {
   servicesTeaserTitle: { en: "Services", ka: "სერვისები" } as L,
   galleryTeaserTitle: { en: "Gallery", ka: "გალერეა" } as L,
   locationTitle: { en: "Visit Us", ka: "გვეწვიეთ" } as L,
+  whySoloTitle: { en: "Why Solo Barber", ka: "რატომ Solo Barber" } as L,
 };
+
+export type Value = { title: L; desc: L };
+
+export const VALUES: Value[] = [
+  {
+    title: { en: "Personalized Attention", ka: "პერსონალური მიდგომა" },
+    desc: {
+      en: "Every visit is one-on-one — your barber's full focus, start to finish.",
+      ka: "ყოველი ვიზიტი — ერთზე ერთი. თქვენი ბარბერის სრული ყურადღება დასაწყისიდან დასასრულამდე.",
+    },
+  },
+  {
+    title: { en: "Premium Products", ka: "პრემიუმ პროდუქცია" },
+    desc: {
+      en: "Quality tools and products, chosen for lasting results.",
+      ka: "ხარისხიანი ინსტრუმენტები და პროდუქცია გამძლე შედეგისთვის.",
+    },
+  },
+  {
+    title: { en: "By Appointment Only", ka: "მხოლოდ წინასწარი ჩაწერით" },
+    desc: {
+      en: "No walk-in crowds — just you and your reserved time.",
+      ka: "არანაირი რიგი — მხოლოდ თქვენი დაჯავშნილი დრო.",
+    },
+  },
+];
 
 export const SERVICES_PAGE = {
   title: { en: "Services & Pricing", ka: "სერვისები და ფასები" } as L,

@@ -3,6 +3,7 @@
 @theme inline {
   --font-heading: var(--font-manrope), sans-serif;
   --font-body: var(--font-inter), var(--font-noto-georgian), sans-serif;
+  --font-accent: var(--font-playfair), serif;
 
   --color-base: #0b0b0b;
   --color-surface: #12100e;
@@ -29,21 +30,18 @@ body {
   color: var(--color-base);
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hairline {
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 106, 0.5), transparent);
+  height: 1px;
 }
 
-.reveal {
-  animation: fadeUp 1s ease both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 30%;
+@keyframes bob {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+.scroll-cue {
+  animation: bob 2.2s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

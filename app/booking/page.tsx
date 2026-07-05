@@ -3,8 +3,10 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/motion/Reveal";
 import { useLanguage } from "@/components/LanguageProvider";
 import { BARBERS, SERVICE_GROUPS, BOOKING_PAGE, CONTACT, priceLabel } from "@/lib/content";
+import { IconCheck, IconWhatsApp, IconInstagram } from "@/components/icons";
 
 type FormState = {
   service: string;
@@ -80,19 +82,24 @@ export default function BookingPage() {
     <div className="min-h-screen bg-base font-body" data-screen-label="Booking">
       <Header />
 
-      <section className="mx-auto max-w-[720px] px-6 pt-[clamp(50px,10vw,90px)] pb-[30px] text-center">
-        <h1 className="mb-[18px] font-heading text-[clamp(32px,5vw,52px)] font-semibold text-cream">
+      <Reveal as="section" className="mx-auto max-w-[720px] px-6 pt-[clamp(50px,10vw,90px)] pb-[30px] text-center">
+        <span className="font-accent text-lg italic text-gold">
+          {lang === "ka" ? "დაჯავშნა" : "Reserve Your Chair"}
+        </span>
+        <h1 className="mt-3 mb-[18px] font-heading text-[clamp(32px,5vw,52px)] font-semibold text-cream">
           {BOOKING_PAGE.title[lang]}
         </h1>
         <p className="font-body text-[15px] leading-[1.7] text-muted">{BOOKING_PAGE.intro[lang]}</p>
-      </section>
+      </Reveal>
 
       <section className="mx-auto max-w-[640px] px-6 pt-10 pb-[60px]">
         {submitted ? (
-          <div className="rounded-md border border-[rgba(201,168,106,0.4)] bg-surface-green px-8 py-12 text-center">
-            <span className="font-heading text-[40px] text-gold">✓</span>
+          <Reveal className="rounded-md border border-[rgba(201,168,106,0.4)] bg-surface-green px-8 py-12 text-center">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-gold/50">
+              <IconCheck className="h-6 w-6 text-gold" />
+            </div>
             <p className="mt-5 font-body text-base leading-[1.7] text-cream">{BOOKING_PAGE.confirmation[lang]}</p>
-          </div>
+          </Reveal>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             <div>
@@ -178,7 +185,7 @@ export default function BookingPage() {
 
             <button
               type="submit"
-              className="mt-2 rounded bg-gold p-4 font-body text-[15px] font-semibold text-[#0b0b0b]"
+              className="mt-2 cursor-pointer rounded bg-gold p-4 font-body text-[15px] font-semibold text-[#0b0b0b] shadow-[0_0_0_rgba(201,168,106,0)] transition-shadow duration-300 hover:shadow-[0_14px_34px_rgba(201,168,106,0.28)]"
             >
               {BOOKING_PAGE.fields.submit[lang]}
             </button>
@@ -192,16 +199,18 @@ export default function BookingPage() {
               href={CONTACT.whatsappHref}
               target="_blank"
               rel="noopener"
-              className="rounded-md border border-[rgba(201,168,106,0.5)] px-7 py-3.5 font-body text-sm font-semibold text-cream no-underline"
+              className="inline-flex items-center gap-2 rounded-md border border-[rgba(201,168,106,0.5)] px-7 py-3.5 font-body text-sm font-semibold text-cream no-underline transition-colors duration-200 hover:border-gold"
             >
+              <IconWhatsApp className="h-4 w-4" />
               WhatsApp
             </a>
             <a
               href={CONTACT.instagramHref}
               target="_blank"
               rel="noopener"
-              className="rounded-md border border-[rgba(201,168,106,0.5)] px-7 py-3.5 font-body text-sm font-semibold text-cream no-underline"
+              className="inline-flex items-center gap-2 rounded-md border border-[rgba(201,168,106,0.5)] px-7 py-3.5 font-body text-sm font-semibold text-cream no-underline transition-colors duration-200 hover:border-gold"
             >
+              <IconInstagram className="h-4 w-4" />
               Instagram DM
             </a>
           </div>

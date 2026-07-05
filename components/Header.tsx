@@ -6,6 +6,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/components/LanguageProvider";
 import { CONTACT, NAV_LABEL } from "@/lib/content";
+import MagneticLink from "@/components/motion/MagneticLink";
+import { IconClose, IconWhatsApp } from "@/components/icons";
 
 const NAV_ORDER = ["home", "services", "gallery", "team", "reviews", "contact"] as const;
 
@@ -34,6 +36,12 @@ export default function Header({ hasHero = false }: { hasHero?: boolean }) {
 
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuResetForPath, setMenuResetForPath] = useState(pathname);
+
+  if (pathname !== menuResetForPath) {
+    setMenuResetForPath(pathname);
+    setIsMenuOpen(false);
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -41,10 +49,6 @@ export default function Header({ hasHero = false }: { hasHero?: boolean }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
@@ -92,13 +96,19 @@ export default function Header({ hasHero = false }: { hasHero?: boolean }) {
               <a
                 key={item.key}
                 href={item.href}
-                className="border-b pb-[5px] font-body text-[13.5px] tracking-[0.02em] no-underline transition-colors duration-200"
-                style={{
-                  color: item.isActive ? "#C9A86A" : "#F5F5F5",
-                  borderBottomColor: item.isActive ? "#C9A86A" : "transparent",
-                }}
+                className="group relative py-[5px] font-body text-[13.5px] tracking-[0.02em] no-underline transition-colors duration-200"
+                style={{ color: item.isActive ? "#C9A86A" : "#F5F5F5" }}
               >
                 {item.label}
+                <span
+                  aria-hidden="true"
+                  className="absolute left-0 -bottom-[1px] h-px w-full origin-left bg-gold transition-transform duration-300 ease-out"
+                  style={{ transform: item.isActive ? "scaleX(1)" : "scaleX(0)" }}
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute left-0 -bottom-[1px] h-px w-full origin-left scale-x-0 bg-gold transition-transform duration-300 ease-out group-hover:scale-x-100"
+                />
               </a>
             ))}
           </nav>
@@ -110,12 +120,15 @@ export default function Header({ hasHero = false }: { hasHero?: boolean }) {
             >
               {langToggleLabel}
             </button>
-            <Link
-              href="/booking"
-              className="whitespace-nowrap rounded-sm bg-gold px-[25px] py-[11px] font-body text-[13.5px] font-semibold text-[#0b0b0b] no-underline transition-transform duration-200 hover:-translate-y-0.5"
-            >
-              {bookNowLabel}
-            </Link>
+            <MagneticLink>
+              <Link
+                href="/booking"
+                data-cursor-hover
+                className="whitespace-nowrap rounded-sm bg-gold px-[25px] py-[11px] font-body text-[13.5px] font-semibold text-[#0b0b0b] no-underline shadow-[0_0_0_rgba(201,168,106,0)] transition-shadow duration-300 hover:shadow-[0_10px_26px_rgba(201,168,106,0.28)]"
+              >
+                {bookNowLabel}
+              </Link>
+            </MagneticLink>
           </div>
 
           <button
@@ -163,9 +176,9 @@ export default function Header({ hasHero = false }: { hasHero?: boolean }) {
           <button
             onClick={() => setIsMenuOpen(false)}
             aria-label="Close"
-            className="h-11 w-11 border-none bg-transparent p-2 text-3xl leading-none text-cream"
+            className="flex h-11 w-11 items-center justify-center border-none bg-transparent p-2 text-cream"
           >
-            &times;
+            <IconClose className="h-6 w-6" />
           </button>
         </div>
         <div className="flex flex-col gap-7">
@@ -213,9 +226,10 @@ export default function Header({ hasHero = false }: { hasHero?: boolean }) {
             href={CONTACT.whatsappHref}
             target="_blank"
             rel="noopener"
-            className="flex-1 py-3.5 px-2 text-center font-body text-sm font-semibold text-cream no-underline"
+            className="flex flex-1 items-center justify-center gap-1.5 py-3.5 px-2 text-center font-body text-sm font-semibold text-cream no-underline"
             style={{ background: "#1B302B" }}
           >
+            <IconWhatsApp className="h-4 w-4 text-gold" />
             WhatsApp
           </a>
         </div>
