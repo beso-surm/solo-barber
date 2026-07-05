@@ -65,7 +65,7 @@ export default function RootLayout({
       lang="ka"
       className={`${manrope.variable} ${inter.variable} ${notoGeorgian.variable} ${playfair.variable}`}
     >
-      <body className="min-h-screen bg-base font-body text-cream antialiased">
+      <body className="min-h-screen bg-ink font-body text-cream antialiased">
         <GrainOverlay />
         <CustomCursor />
         <LanguageProvider>{children}</LanguageProvider>

@@ -13,7 +13,7 @@ export default function TeamPage() {
   const { lang } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-base font-body" data-screen-label="Team">
+    <div className="min-h-screen bg-ink font-body" data-screen-label="Team">
       <Header />
 
       <Reveal as="section" className="mx-auto max-w-[760px] px-7 pt-[clamp(50px,10vw,70px)] pb-14 text-center">

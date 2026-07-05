@@ -79,7 +79,7 @@ export default function BookingPage() {
     "w-full box-border rounded bg-surface-green border border-[rgba(163,156,146,0.3)] p-3.5 text-cream font-body text-[15px] placeholder:text-[#6a6a6e] focus:outline-none focus:border-gold";
 
   return (
-    <div className="min-h-screen bg-base font-body" data-screen-label="Booking">
+    <div className="min-h-screen bg-ink font-body" data-screen-label="Booking">
       <Header />
 
       <Reveal as="section" className="mx-auto max-w-[720px] px-6 pt-[clamp(50px,10vw,90px)] pb-[30px] text-center">

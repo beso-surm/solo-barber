@@ -13,7 +13,7 @@ export default function ContactPage() {
   const { lang } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-base font-body" data-screen-label="Contact">
+    <div className="min-h-screen bg-ink font-body" data-screen-label="Contact">
       <Header />
 
       <Reveal as="section" className="mx-auto max-w-[900px] px-7 pt-[clamp(50px,10vw,70px)] pb-5 text-center">

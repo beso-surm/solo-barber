@@ -51,7 +51,7 @@ export default function GalleryPage() {
   const active = lightboxIndex !== null ? PHOTOS[lightboxIndex] : null;
 
   return (
-    <div className="min-h-screen bg-base font-body" data-screen-label="Gallery">
+    <div className="min-h-screen bg-ink font-body" data-screen-label="Gallery">
       <Header />
 
       <section className="mx-auto max-w-[900px] px-6 pt-[clamp(50px,10vw,90px)] pb-12 text-center">

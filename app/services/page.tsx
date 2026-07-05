@@ -20,7 +20,7 @@ export default function ServicesPage() {
   const { lang } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-base font-body" data-screen-label="Services">
+    <div className="min-h-screen bg-ink font-body" data-screen-label="Services">
       <Header />
 
       <section className="mx-auto max-w-[900px] px-6 pt-[clamp(50px,10vw,90px)] pb-10 text-center">
@@ -66,7 +66,7 @@ export default function ServicesPage() {
           );
         })}
 
-        <p className="text-center font-body text-xs italic text-[#6a6a6e]">{SERVICES_PAGE.priceNote[lang]}</p>
+        <p className="text-center font-body text-xs italic text-faint">{SERVICES_PAGE.priceNote[lang]}</p>
 
         <div className="mt-4 text-center">
           <MagneticLink>

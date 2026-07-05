@@ -158,7 +158,7 @@ export default function Header({ hasHero = false }: { hasHero?: boolean }) {
 
       {/* Mobile fullscreen menu */}
       <div
-        className="fixed inset-0 z-[100] flex flex-col bg-base p-7 transition-[opacity,transform] duration-350 ease-out min-[901px]:hidden"
+        className="fixed inset-0 z-[100] flex flex-col bg-ink p-7 transition-[opacity,transform] duration-350 ease-out min-[901px]:hidden"
         style={{
           opacity: isMenuOpen ? 1 : 0,
           transform: isMenuOpen ? "translateY(0)" : "translateY(-16px)",

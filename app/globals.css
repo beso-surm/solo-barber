@@ -5,13 +5,13 @@
   --font-body: var(--font-inter), var(--font-noto-georgian), sans-serif;
   --font-accent: var(--font-playfair), serif;
 
-  --color-base: #0b0b0b;
+  --color-ink: #0b0b0b;
   --color-surface: #12100e;
   --color-surface-green: #14201c;
   --color-gold: #c9a86a;
   --color-cream: #f5f5f5;
   --color-muted: #a39c92;
-  --color-faint: #6a6a6e;
+  --color-faint: #82807c;
 }
 
 html {
@@ -20,14 +20,14 @@ html {
 }
 
 body {
-  background: var(--color-base);
+  background: var(--color-ink);
   color: var(--color-cream);
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
   background: var(--color-gold);
-  color: var(--color-base);
+  color: var(--color-ink);
 }
 
 .hairline {

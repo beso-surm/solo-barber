@@ -59,7 +59,7 @@ export default function HomePage() {
   });
 
   return (
-    <div className="min-h-screen bg-base font-body" data-screen-label="Home">
+    <div className="min-h-screen bg-ink font-body" data-screen-label="Home">
       <Header hasHero />
 
       {/* HERO */}
